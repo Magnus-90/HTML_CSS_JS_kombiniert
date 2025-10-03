@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js"></script>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piano and Keyboard Shop</title>
+  </head>
+  <body>
+    <div class="tasklist">
+      <h1 class="title-font">Pianos & Keyboards</h1>
+    </div>
+    <button onclick="togglePopup()" class="add-card">
+      Add New Piano / Keyboard
+    </button>
+    <div class="card">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              class="card-picture"
+              src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_55/558458/17892907_800.jpg"
+              alt="Bild konnte nicht gealden werden"
+            />
+          </td>
+          <td>
+            <h1 contenteditable="false" class="title">
+              Steinway & Sons L Grand Piano
+            </h1>
+            <ul contenteditable="false" class="description">
+              <li>Hersteller: Steinway & Sons</li>
+              <li>Preis: 36'590 CHF</li>
+              <li>Anzahl Tasten: 88</li>
+              <li>Baujahr: 1925</li>
+              <li>Zustand: Gebraucht</li>
+              <li>(Offen):</li>
+            </ul>
+          </td>
+          <td>
+            <div class="card-buttons">
+              <button class="button-safe">Safe Button</button>
+              <button class="button-edit">Edit Button</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </div>
+    <div class="card">
+      <tbody>
+        <tr>
+          <td>
+            <img
+              class="card-picture"
+              src="https://thumbs.static-thomann.de/thumb/padthumb600x600/pics/bdb/_15/154486/2337743_800.jpg"
+              alt="Bild konnte nicht geladen werden"
+            />
+          </td>
+          <td>
+            <h1 contenteditable="false" class="title">
+              Yamaha GC 1 M PE Grand Piano
+            </h1>
+            <ul contenteditable="false" class="description">
+              <li>Hersteller: Yamaha</li>
+              <li>Preis: 17'222 CHF</li>
+              <li>Anzahl Tasten: 88</li>
+              <li>Baujahr: Juli 2002</li>
+              <li>Zustand: Neu</li>
+              <li>(Offen):</li>
+            </ul>
+          </td>
+          <td>
+            <div class="card-buttons">
+              <button class="button-safe">Safe Button</button>
+              <button class="button-edit">Edit Button</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </div>
+    <div id="popupOverlay" class="overlay-container">
+      <div class="popup-box">
+        <h2 style="color: black">New Piano / Keyboard</h2>
+        <form class="form-container" onsubmit="save()">
+          <div>
+            <label id="form" style="color: black" class="form-label" for="name">Name:</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Geben sie hier den Namen"
+              id="Name"
+              required
+            />
+          </div>
+          <div>
+            <label class="form-label" style="color: black" for="description">Description:</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Geben die hier eine Beschreibung ein"
+              id="Description"
+              name="Description"
+            />
+            <label for="image" style="color: black">Image URL:</label>
+            <input
+              class="form-input"
+              type="text"
+              placeholder="Geben die hier eine Image URL ein"
+              id="image-url"
+              name="Image"
+            />
+          </div>
+          <br />
+          <button class="btn-submit" type="submit">
+            Submit
+          </button>
+        </form>
+        <button class="btn-close-popup" onclick="togglePopup()">Close</button>
+      </div>
+    </div>
+  </body>
+</html>
