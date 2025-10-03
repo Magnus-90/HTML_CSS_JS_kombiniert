@@ -3,7 +3,16 @@ function togglePopup() {
   overlay.classList.toggle("show");
 }
 
+function edit() {
+  let edit = document.getElementsByClassName("edit");
+  Array.from(edit).forEach((element) =>
+    element.contentEditable = true
+  );
+}
 
-function save(){
-
+function save() {
+  let edit = document.getElementsByClassName("edit");
+  Array.from(edit).forEach((element) =>
+    element.contentEditable = false
+  );
 }
