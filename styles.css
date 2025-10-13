@@ -8,6 +8,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.card-list{
+  border: none;
+}
+
 .card {
   display: flex;
   flex-direction: column;
