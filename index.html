@@ -5,6 +5,7 @@
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/x-icon" href="imgs\9706459.png">
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
@@ -15,11 +16,17 @@
   </head>
   <body>
     <div class="tasklist">
-      <h1 class="title-font">Pianos & Keyboards</h1>
+      <h1 class="title-font">Pianos & Keyboards &#127929;</h1>
     </div>
     <button onclick="togglePopup()" class="add-card">
       Add New Piano / Keyboard
     </button>
+    <!-- <button onclick="sortCards(a-z)">
+      Sortieren A-Z
+    </button>
+    <button onclick="sortCards(z-a)">
+      Sortieren Z-A
+    </button> -->
     <div id="card-list">
     </div>
     <div id="popupOverlay" class="overlay-container">
@@ -62,7 +69,7 @@
           <button class="btn-submit" type="submit">Submit</button>
         </form>
         <button class="btn-close-popup" onclick="togglePopup()">Close</button>
-      
+      </div>
     </div>
   </body>
 </html>

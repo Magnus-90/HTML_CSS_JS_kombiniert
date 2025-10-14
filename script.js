@@ -25,7 +25,7 @@ function updateLocalStorage() {
   document.querySelectorAll(".card").forEach((card) => {
     const name = card.querySelector(".title").innerText.trim();
     const description =
-      card.querySelector(".description li")?.innerText.trim() || "";
+      card.querySelector(".description")?.innerText.trim() || "";
     const imageurl = card.querySelector(".card-picture").src || "";
     cards.push({ name, description, imageurl });
   });
@@ -53,6 +53,28 @@ function saveform(event) {
 
 function loadCards() {
   const cards = JSON.parse(localStorage.getItem("cards")) || [];
+  renderAllCards(cards);
+}
+
+function sortCards(order) {
+  let cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+  cards.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+
+    if (order === "a-z") return nameA.localeCompare(nameB);
+    if (order === "z-a") return nameB.localeCompare(nameA);
+  });
+
+  localStorage.setItem("cards", JSON.stringify(cards));
+
+  renderAllCards(cards);
+}
+
+function renderAllCards(cards) {
+  const cardList = document.getElementById("card-list");
+  cardList.innerHTML = "";
   cards.forEach(renderCard);
 }
 
@@ -74,15 +96,18 @@ function renderCard(card) {
             <h1 contenteditable="false" class="title edit">
               ${card.name || "Kein Name"}
             </h1>
+            
             <ul contenteditable="false" class="description edit">
+            <li>
               ${card.description || "Keine Beschreibung"}
+            </li>
             </ul>
           </td>
           <td>
             <div class="card-buttons">
-              <button onclick="deletecard(event)" class="button-delete">Delete Button</button>
               <button onclick="save()" class="button-safe">Safe Button</button>
               <button onclick="edit()" class="button-edit">Edit Button</button>
+              <button onclick="deletecard(event)" class="button-delete">Delete Button</button>
             </div>
           </td>
         </tr>
