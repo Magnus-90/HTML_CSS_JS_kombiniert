@@ -65,10 +65,10 @@ function renderCard(card) {
             />
           </td>
           <td>
-            <h1 contenteditable="false" class="title">
+            <h1 contenteditable="false" class="title edit">
               ${card.name || "Kein Name"}
             </h1>
-            <ul contenteditable="false" class="description">
+            <ul contenteditable="false" class="description edit">
               ${card.description || "Keine Beschreibung"}
             </ul>
           </td>
