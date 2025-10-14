@@ -45,13 +45,22 @@ body {
   border-radius: 7px;
   font-size: 20px;
 }
+.button-delete{
+  border-radius: 7px;
+  font-size: 20px;
+}
 .button-edit:hover {
-  background-color: rgba(226, 183, 170, 0.61);
+  background-color: rgba(216, 188, 137, 0.61);
   cursor: pointer;
 }
 
 .button-safe:hover {
   background-color: rgba(250, 250, 210, 0.685);
+  cursor: pointer;
+}
+
+.button-delete:hover {
+  background-color: rgba(250, 210, 210, 0.685);
   cursor: pointer;
 }
 

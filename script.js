@@ -14,6 +14,12 @@ function save() {
   updateLocalStorage();
 }
 
+function deletecard() {
+  const card = event.target.closest(".cards");
+  card.remove();
+  updateLocalStorage();
+}
+
 function updateLocalStorage() {
   const cards = [];
   document.querySelectorAll(".card").forEach((card) => {
@@ -74,6 +80,7 @@ function renderCard(card) {
           </td>
           <td>
             <div class="card-buttons">
+              <button onclick="deletecard(event)" class="button-delete">Delete Button</button>
               <button onclick="save()" class="button-safe">Safe Button</button>
               <button onclick="edit()" class="button-edit">Edit Button</button>
             </div>
